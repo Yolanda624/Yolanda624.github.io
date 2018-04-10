@@ -1,0 +1,166 @@
+body {
+    font: 15px "楷体", "宋体", "Arial Narrow";
+    /* color: #3F3E3C; */
+    color: #c2c2c2;
+    line-height: 1.5;
+    background: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar-nav {
+    float: none;
+    margin: 0 auto;
+    padding: auto 0;
+}
+
+ul .nav .navbar-nav li {
+    display: inline-block;
+    float: none;
+    margin: 10px;
+}
+
+.navbar .row a,
+#mytime {
+    display: inlne-block;
+    margin: 0 10px;
+}
+
+.carousel-inner .item img {
+    width: 652px;
+    height: 250px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #c0c0c0;
+}
+
+
+/* details {
+    overflow: hidden;
+    background: #7c7c7c;
+    display: block;
+    margin: 10px 5px;
+}
+
+details summary {
+    cursor: pointer;
+    padding: 10px;
+}
+
+details .hidden-text {
+    float: left;
+    padidng: 10px;
+    color: coral;
+}
+
+details .hidden_text .h3 {
+    margin-top: 0;
+} */
+
+.card {
+    background: url(./image/ffyy1.png) no-repeat right top rgba(42, 42, 42, 1);
+    height: 250px;
+    width: 400px;
+    border-radius: 6px;
+    padding-left: 5px;
+    box-shadow: rgba(255, 255, 255, .1) 0px 1px 0px, rgba(0, 0, 0, .7) 0px 1px 1px inset;
+}
+
+.card ul {
+    float: left;
+    margin-left: 0px;
+    margin-top: 30px;
+    padding-left: 30px;
+}
+
+.card ul li {
+    list-style: none;
+    padding: 5px 0;
+    height: 40px;
+    line-height: 40px;
+    /* display: block; */
+    /* height: 30px; */
+    /* width: 30px; */
+    /* line-height: 30px; */
+    /* text-align: center; */
+    /* margin: 0 10px; */
+}
+
+.card ul li span {
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    display: block;
+    float: left;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 5px;
+    box-shadow: rgba(255, 255, 255, .1) 0px 1px 0px, rgba(0, 0, 0, .7) 0px 1px 1px inset;
+}
+
+.box {
+    background: #222;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, .1), inset 0px 1px 1px rgba(0, 0, 0, .7);
+    width: 630px;
+    color: #b9b9b9;
+    border-radius: 6px;
+    position: relative;
+    margin: 10px 5px;
+}
+
+.box img {
+    width: 150px;
+    height: 106px;
+    float: left;
+    border-radius: 4px;
+    margin: 0 20px 20px 0;
+}
+
+.box a {
+    display: block;
+    color: #7c7c7c;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+.box a:hover {
+    color: darksalmon;
+    text-decoration: none;
+}
+
+.box p {
+    display: block;
+    padding: 0 20px 20px;
+    word-wrap: break-word;
+}
+
+.box .comment {
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    background: rgba(1, 1, 1, 0.3);
+    border-radius: 0 0 6px 6px;
+    padding: 0 10px;
+}
+
+.box .comment li {
+    margin-bottom: 10px;
+    margin-right: 15px;
+}
+
+.box .comment .fl {
+    float: left;
+    margin-left: 25px;
+}
+
+.box .comment .fr {
+    float: right;
+}

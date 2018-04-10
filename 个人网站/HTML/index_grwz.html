@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>building个人网页</title>
+    <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.css" rel="stylesheet" />
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../CSS/grwz.css" />
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <!-- <script type="text/javascript">
+        function showTime() {
+            nowtime = new Date();
+            year = nowtime.getFullYear();
+            month = nowtime.getMonth() + 1;
+            date = nowtime.getDate();
+            document.getElementById("mytime").innerText = year + "年" + month + "月" + date + "日" + " " + nowtime.toLocaleTimeString();
+        }
+
+        setInterval("showTime()", 1000);
+    </script> -->
+    <script src="../js/time.js" type="text/JavaScript"></script>
+
+</head>
+
+<body>
+
+
+    <!-- 布局容器：100%宽度 -->
+    <!-- 共分为四个row，////row1：导航一栏////；row2：首页（包括主图和个人简介）；
+                 row3：主体文章内容；row4：底部（包括友情链接等） -->
+    <div class="container-fluid">
+
+        <!-- row1：导航一栏 -->
+        <nav class="navbar navbar-default nav-pills navbar-inverse" role="navigation">
+            <div class="content-fluid">
+                <div class="row" style="padding-top:10px;">
+                    <div class="col-md-12 col-md-offset-1">
+                        <div class="navber-header">
+                            <a href="#" class="navbar-brand">博客首页</a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">图书推荐</a></li>
+                                <li><a href="#">网站建设</a></li>
+                                <li><a href="#">技术探讨</a></li>
+                                <li><a href="#">JS实例</a></li>
+                                <li><a href="#">HTML/CSS</a></li>
+                                <li><a href="#">慢生活</a></li>
+                                <li><a href="#">碎言碎语</a></li>
+                                <li>
+                                    <div id="mytime" style="color:gold;margin:13px 0 0 100px;">
+
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- row2：首页（包括主图和个人简介） -->
+
+
+        <div class="row lunb_row" style="padding-top:20px">
+            <div class="col-md-6 col-md-offset-1">
+                <!-- <img src="./image/zhutu.jpeg" alt="这 是一个大的轮播图"> -->
+
+                <!-- <details>
+                    <summary> -->
+                <div id="myCarousel" class="carousel slide">
+                    <!-- 轮播（Carousel）指标 -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- 轮播（Carousel）项目 -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="../image/zhutu1.jpg" class="img-rounded img-responsive" alt="First slide">
+                        </div>
+                        <div class="item">
+                            <img src="../image/daoying1.jpg" class="img-rounded img-responsive" alt="Second slide">
+                        </div>
+                        <div class="item">
+                            <img src="../image/moon1.jpg" class="img-rounded img-responsive" alt="Third slide">
+                        </div>
+                    </div>
+                    <!-- 轮播（Carousel）导航 -->
+                    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                </div>
+
+            </div>
+            <div class="col-md-4 card">
+                <ul>
+                    <li>
+                        <span class="glyphicon glyphicon-user" style="color:aqua;font-size:20px;"></span> &nbsp;昵称：|未来第一站
+                    </li>
+
+                    <li>
+                        <span class="glyphicon glyphicon-earphone" style="color:coral;font-size:20px;">
+                        </span> &nbsp;TEL：17888888888
+                    </li>
+                    <li>
+                        <span class=" glyphicon glyphicon-globe " style="color:gold;font-size:20px;"></span>&nbsp;Wechat：1378409286LI
+                    </li>
+                    <li>
+                        <span class="glyphicon glyphicon-envelope " style="color:fuchsia;font-size:20px;"></span> &nbsp;Email：1378409286@qq.com
+                    </li>
+                    <li>
+                        <span class="glyphicon glyphicon-send " style="color:lawngreen;font-size:20px;"></span>&nbsp;介绍：一只笨鸟正在飞
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- row3：主体文章内容； 一个row分两个col，左6（offset为1）、右4-->
+        <!-- 左边的这个col,嵌套5col,
+                               右边的这个col，嵌套4个col -->
+        <div class="row ">
+
+            <!-- 左：嵌套5row，每个row有一个col（占6格），竖向排列5条文本 -->
+            <div class="col-md-6 col-md-offset-1 ">
+                <!-- 左边的那一列 -->
+
+                <div class="row ">
+                    <div class="col-md-12 " style="margin-top:30px;">
+                        <div class="box">
+                            <a href="#">
+                                世界美好无比
+                            </a>
+                            <ul>
+                                <img src="../image/qiuye.jpeg" alt="主文的图片">
+                                <p>
+                                    &nbsp;&nbsp; 我觉得这个世界美好无比。晴时满树花开，雨天一湖涟漪，阳光席卷城市， 微风穿越指间，入夜每个电台播放的情歌，沿途每条山路铺开的影子， 全部是你不经意写的一字一句，留我年复一年朗读。这世界是你的遗嘱， 而我是唯一的遗物。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<cite>——张嘉佳 《从你的全世界路过》</cite>
+                                </p>
+                            </ul>
+
+
+                            <ul class="comment">
+                                <li class="fl">
+                                    <!-- 时间 -->
+                                    <div class="glyphicon glyphicon-time"> 2018-3-18</div>
+                                </li>
+                                <li class="fr">
+                                    <!-- 评论、点赞 -->
+
+                                    <div class="glyphicon glyphicon-edit"> 评论（06）</div>
+
+
+                                    <div class="glyphicon glyphicon-heart"> 点赞（24）</div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- 以下内容与第一条完全一样，等待修改 -->
+
+
+                <div class="row ">
+                    <div class="col-md-12 " style="margin-top:30px;">
+                        <div class="box">
+                            <a href="#">
+                                   人总会遇到挫折
+                                </a>
+                            <ul>
+                                <img src="../image/caochangqian.jpeg" alt="主文的图片">
+                                <p>
+                                    &nbsp;&nbsp; 人总会遇到挫折，会有低潮，会有不被人理解的时候，会有要低声下气的时候，这些时候恰恰是人生最关键的时候。在这样的时刻，我们需要耐心等待，满怀信心地去等待，相信，生活不会放弃你，命运不会抛弃你。如果耐不住寂寞，你就看不到繁华。
+                                </p>
+                            </ul>
+
+
+                            <ul class="comment">
+                                <li class="fl">
+                                    <!-- 时间 -->
+                                    <div class="glyphicon glyphicon-time"> 2018-3-18</div>
+                                </li>
+                                <li class="fr">
+                                    <!-- 评论、点赞 -->
+
+                                    <div class="glyphicon glyphicon-edit"> 评论（06）</div>
+
+
+                                    <div class="glyphicon glyphicon-heart"> 点赞（24）</div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row ">
+                    <div class="col-md-12 " style="margin-top:30px;">
+                        <div class="box">
+                            <a href="#">
+                                       心中有爱，才会人见人爱
+                                    </a>
+                            <ul>
+                                <img src="../image/duocai.jpeg" alt="主文的图片">
+                                <p>
+                                    &nbsp;&nbsp; ①微笑比皱眉好看，请求比呵斥自然。②心中有爱，才会人见人爱。③行动是治愈恐惧的良药，而犹豫、拖延将不断滋养恐惧。④所谓意境－－得意、失意，请勿在意；顺境、逆境，切莫止境。⑤成功路上，你流过多少泪，就有多少笑容在等待。⑥成就自我，就是打败内心的小怪兽。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<cite>——张嘉佳 《从你的全世界路过》</cite>
+                                </p>
+                            </ul>
+
+
+                            <ul class="comment">
+                                <li class="fl">
+                                    <!-- 时间 -->
+                                    <div class="glyphicon glyphicon-time"> 2018-3-18</div>
+                                </li>
+                                <li class="fr">
+                                    <!-- 评论、点赞 -->
+
+                                    <div class="glyphicon glyphicon-edit"> 评论（06）</div>
+
+
+                                    <div class="glyphicon glyphicon-heart"> 点赞（24）</div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row ">
+                    <div class="col-md-12 " style="margin-top:30px;">
+                        <div class="box">
+                            <a href="#">
+                                    没有礁石的阻挡，哪有浪花的激越
+                            </a>
+                            <ul>
+                                <img src="../image/blue.jpeg" alt="主文的图片">
+                                <p>
+                                    &nbsp;&nbsp; 没有礁石的阻挡，哪有浪花的激越；没有羚羊的快捷，哪有猎豹的英姿；有了风的拥抱，帆张开了胸膛；有了雪的映衬，梅越加冷艳高洁。人生的路上，我们时时被挫折环伺，被失败包围。让我们越挫越勇，越败越强，只要不倒下只要不溃退，失败和挫折就如垫脚石，增加我们的高度，厚重我们的人生。
+                                </p>
+                            </ul>
+
+
+                            <ul class="comment">
+                                <li class="fl">
+                                    <!-- 时间 -->
+                                    <div class="glyphicon glyphicon-time"> 2018-3-18</div>
+                                </li>
+                                <li class="fr">
+                                    <!-- 评论、点赞 -->
+
+                                    <div class="glyphicon glyphicon-edit"> 评论（06）</div>
+
+
+                                    <div class="glyphicon glyphicon-heart"> 点赞（24）</div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row ">
+                    <div class="col-md-12 " style="margin-top:30px;">
+                        <div class="box">
+                            <a href="#">
+                                          心若向阳，无畏悲伤
+                                        </a>
+                            <ul>
+                                <img src="../image/dream.jpeg" alt="主文的图片">
+                                <p>
+                                    &nbsp;&nbsp;你可以躲起来疗伤，但不要躲得太久，你为旧伤口浪费的是你本可以用来幸福的时光。不要总说你还没有准备好，不要总把期待留给明天，我们生命里没有那么多明天可以等，每一个今天都是你昨日曾期待的明天。爱，快乐，倾听自己的内心，都是要趁今天的事情。只有能将当下过好的人，才可能真的拥有一个好明天。
+                                </p>
+                            </ul>
+
+
+                            <ul class="comment">
+                                <li class="fl">
+                                    <!-- 时间 -->
+                                    <div class="glyphicon glyphicon-time"> 2018-3-18</div>
+                                </li>
+                                <li class="fr">
+                                    <!-- 评论、点赞 -->
+
+                                    <div class="glyphicon glyphicon-edit"> 评论（06）</div>
+
+
+                                    <div class="glyphicon glyphicon-heart"> 点赞（24）</div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 以上内容等待修改 -->
+
+
+
+            </div>
+
+
+            <!-- 右：嵌套5row，每个row有一个col（占4格），竖向排列5个框框 -->
+            <div class="col-md-4 ">
+                <div id='jnkc'></div>
+                <script>
+                    setInterval("jnkc.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());", 1000);
+                </script>
+                <div class="row ">
+                    <div class="col-md-4 ">推荐文章</div>
+                </div>
+
+                <div class="row ">
+                    <div class="col-md-4 ">图文并茂</div>
+                </div>
+
+                <div class="row ">
+                    <div class="col-md-4 ">热门点击</div>
+                </div>
+
+                <div class="row ">
+                    <div class="col-md-4 ">放大镜搜索</div>
+                </div>
+
+                <div class="row ">
+                    <div class="col-md-4 ">多媒体播放</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- row4：底部（包括友情链接等） -->
+        <div class="row ">
+            <div class="col-md-6 col-md-offset-1 ">友情链接</div>
+            <div class="col-md-4 ">个人说明</div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
