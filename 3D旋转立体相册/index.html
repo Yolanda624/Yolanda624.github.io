@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D旋转立体相册</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background-color: rgba(0, 0, 0, 1);
+        }
+        
+        #pspectv {
+            perspective: 800px;
+        }
+        
+        #wrap {
+            width: 120px;
+            height: 180px;
+            /* border: 1px solid red; */
+            margin: 5px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            /* perspective: 800px; */
+            transform: rotateX(-12deg);
+        }
+        
+        #wrap img {
+            width: 120px;
+            height: 180px;
+            position: absolute;
+            box-shadow: 0 0 1em pink;
+            border-radius: 4px;
+            -webkit-box-reflect: below 9px -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.5));
+            cursor: pointer;
+            transform: rotateY(0deg) translateZ(0px);
+            /* transition: 2s 1s; */
+        }
+        
+        #wrap p {
+            width: 1200px;
+            height: 1200px;
+            border-radius: 50%;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -600px;
+            margin-top: -600px;
+            transform: rotateX(90deg);
+            background: -webkit-radial-gradient(center center, 600px 600px, rgba(1, 0, 252, 0.2), rgba(0, 0, 0, 0.6));
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="pspectv">
+        <div id="wrap">
+            <img src="images/cat-dog.jpg">
+            <img src="images/cat1.jpg" alt="">
+            <img src="images/cat2.jpg" alt="">
+            <img src="images/cat3.jpg" alt="">
+            <img src="images/cat4.jpg" alt="">
+            <img src="images/cat5.jpg" alt="">
+            <img src="images/dog1.jpg" alt="">
+            <img src="images/dog2.jpg" alt="">
+            <img src="images/dog3.jpg" alt="">
+            <img src="images/mouse1.jpg" alt="">
+            <img src="images/pig1.jpg" alt="">
+            <p></p>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            var oWrap = document.getElementById("wrap");
+            var oImg = oWrap.getElementsByTagName("img");
+            var oImgLength = oImg.length;
+            var Deg = 360 / oImgLength;
+            var nowX, nowY, lastX, lastY, minusX, minusY;
+            var roX = -12;
+            var roY = 0;
+            var timer = null;
+            for (var i = 0; i < oImgLength; i++) {
+                oImg[i].style.transform = "rotateY(" + i * Deg + "deg) translateZ(350px)";
+                // oImg[i].style.transition = "transform 1s " + i * 0.2 + " s";
+                oImg[i].style.transition = " transform 1.5s " + (oImgLength - 1 - i) * 0.2 + "s";
+            };
+
+            mTop();
+            window.onresize = mTop;
+
+            function mTop() {
+                var wH = window.innerHeight;
+                oWrap.style.marginTop = "" + wH / 2 - 150 + "px";
+                //只是为了控制整体在页面中的空间位置，因为我已经设置好了margin-top150px，在27行，所以该句注释掉
+            };
+
+            //拖拽 三个事件 按下  移动 抬起
+            document.onmousedown = function(e) {
+                //鼠标按下的时候，给前一个点赋值，防止第一个数为NaN
+                var ev = e || window.event;
+                var lastX = ev.clientX;
+                var lastY = ev.clientY;
+
+
+                this.onmousemove = function(e) {
+                    var ev = e || window.event;
+                    clearInterval(timer); //下一次拖动的时候清除上一次的定时
+
+                    //拿到当前坐标的值
+                    nowX = ev.clientX;
+                    nowY = ev.clientY;
+
+                    //获取差值
+                    minusX = nowX - lastX;
+                    minusY = nowY - lastY;
+                    roY += minusX * 0.2;
+                    roX -= minusY * 0.2;
+
+                    oWrap.style.transform = "rotateX(" + roX + "deg) rotateY(" + roY + "deg)";
+                    //先生成div
+                    // var oDiv = document.createElement("div");
+                    // oDiv.style.cssText = "width:5px;height:5px;background:yellow;position:fixed;left:" +  nowX + "px;top:" +  nowY + "px;";
+                    // this.body.appendChild(oDiv);
+
+                    //拿到上一个的坐标
+                    lastX = nowX;
+                    lastY = nowY;
+
+                };
+                this.onmouseup = function() {
+                    this.onmousemove = null;
+                    timer = setInterval(function() {
+                        minusX *= 0.85;
+                        minusY *= 0.85;
+                        roY += minusX * 0.2;
+                        roX -= minusY * 0.2;
+                        oWrap.style.transform = "rotateX(" + roX + "deg) rotateY(" + roY + "deg)";
+
+                        if (Math.abs(minusX) && Math.abs(minusY) < 0.5) {
+                            clearInterval(timer);
+                        }
+                    }, 20);
+
+                }
+
+                return false;
+
+            }
+        }
+    </script>
+</body>
+
+</html>
